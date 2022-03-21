@@ -16,7 +16,13 @@ const List descripcion = [
   "Géneros",
   "Lo ultimo"
 ];
-
+const List top = [
+  {"img": "assets/images/colibrie.jpg", "title": "Colibrie"},
+  {"img": "assets/images/tortuga.jpg", "title": "Tortuga"},
+  {"img": "assets/images/elefante.jpg", "title": "Elefante"},
+  {"img": "assets/images/murcielago.jpg", "title": "Murcielago"},
+  {"img": "assets/images/perro.jpg", "title": "Perro"},
+];
 const List cat_Aereos = [
   {
     "img": "assets/images/aguila.jpg",
@@ -76,7 +82,7 @@ const List cat_Acuaticos = [
   },
   {
     "img": "assets/images/tortuga.jpg",
-    "title": "Concha",
+    "title": "Tortuga",
     "description": "Fondo del Mar!",
     "categoria:": "marino",
     "habitat": [
@@ -133,7 +139,7 @@ const List cat_Nocturnos = [
   },
   {
     "img": "assets/images/murcielago.jpg",
-    "title": "Mapache",
+    "title": "Murcielago",
     "description": "Animal con antifas!",
     "categoria:": "nocturno",
     "habitat": [
@@ -190,25 +196,13 @@ const List cat_Domesticos = [
 
 const List categorias_animales = [
   {
-    "img": "assets/images/aguila.jpg",
-    "title": "Aguila",
-    "description": "Vive en lo mas alto!",
-    "categoria:": "aereo",
+    "img": "assets/images/elefante.jpg",
+    "title": "Elefante",
+    "description": "El mas fuerte!",
+    "categoria:": "terrestre",
     "habitat": [
-      {"title": "Europa", "Lugar": "Montañas"},
-      {"title": "Asia", "Lugar": "Montañas"},
-      {"title": "Africa", "Lugar": "Montañas"}
-    ]
-  },
-  {
-    "img": "assets/images/colibrie.jpg",
-    "title": "Colibrie",
-    "description": "Vive en Jardines!",
-    "categoria:": "aereo",
-    "habitat": [
-      {"title": "Europa", "Lugar": "Jardines"},
-      {"title": "Asia", "Lugar": "Bosques"},
-      {"title": "Africa", "Lugar": "Arboles"}
+      {"title": "Savana", "Lugar": "Africa"},
+      {"title": "Salvaje", "Lugar": "Grande"}
     ]
   },
   {
@@ -252,6 +246,28 @@ const List categorias_animales = [
       {"title": "Pacifico", "Lugar": "Mar"}
     ]
   },
+  {
+    "img": "assets/images/aguila.jpg",
+    "title": "Aguila",
+    "description": "Vive en lo mas alto!",
+    "categoria:": "aereo",
+    "habitat": [
+      {"title": "Europa", "Lugar": "Montañas"},
+      {"title": "Asia", "Lugar": "Montañas"},
+      {"title": "Africa", "Lugar": "Montañas"}
+    ]
+  },
+  {
+    "img": "assets/images/colibrie.jpg",
+    "title": "Colibrie",
+    "description": "Vive en Jardines!",
+    "categoria:": "aereo",
+    "habitat": [
+      {"title": "Europa", "Lugar": "Jardines"},
+      {"title": "Asia", "Lugar": "Bosques"},
+      {"title": "Africa", "Lugar": "Arboles"}
+    ]
+  },
   //categoria terrestres
   {
     "img": "assets/images/leon.jpg",
@@ -273,16 +289,7 @@ const List categorias_animales = [
       {"title": "Tropicales", "Lugar": "Feroz"}
     ]
   },
-  {
-    "img": "assets/images/elefante.jpg",
-    "title": "Elefante",
-    "description": "El mas fuerte!",
-    "categoria:": "terrestre",
-    "habitat": [
-      {"title": "Savana", "Lugar": "Africa"},
-      {"title": "Salvaje", "Lugar": "Grande"}
-    ]
-  },
+
   //Nocturno
   {
     "img": "assets/images/mapache.jpg",

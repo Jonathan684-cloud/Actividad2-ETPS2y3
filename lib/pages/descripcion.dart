@@ -6,13 +6,12 @@ import 'package:youtube/helpers/data.dart';
 import 'package:youtube/pages/descripcion.dart';
 
 class Descripcion extends StatefulWidget {
-  Descripcion({Key? key}) : super(key: key);
-
   @override
   State<Descripcion> createState() => _DescripcionState();
 }
 
 class _DescripcionState extends State<Descripcion> {
+  double _currentSliderValue = 40;
   @override
   int activeMenu1 = 0;
   Widget build(BuildContext context) {
@@ -71,9 +70,16 @@ class _DescripcionState extends State<Descripcion> {
                             child: Column(
                               children: [
                                 Container(
-                                  width: 300,
-                                  height: 50,
-                                  color: Colors.amber,
+                                  child: Slider(
+                                      activeColor: Colors.green,
+                                      value: _currentSliderValue,
+                                      min: 0,
+                                      max: 200,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _currentSliderValue = value;
+                                        });
+                                      }),
                                 ),
                                 Container(
                                   width: 300,
@@ -81,13 +87,13 @@ class _DescripcionState extends State<Descripcion> {
                                   child: Column(
                                     children: [
                                       Text.rich(TextSpan(
-                                          text: "Nombre de la rola",
+                                          text: "Navegando sobre el Mar",
                                           style: TextStyle(
                                               fontSize: 17,
                                               color: Colors.black54,
                                               fontWeight: FontWeight.w900))),
                                       Text.rich(TextSpan(
-                                          text: "Lo mas visitado de la semana",
+                                          text: "Aves de plata",
                                           style: TextStyle(
                                               fontSize: 13,
                                               color: Colors.black26,
@@ -103,7 +109,7 @@ class _DescripcionState extends State<Descripcion> {
                               width: 300,
                               padding: const EdgeInsets.only(top: 20),
                               child: Text.rich(TextSpan(
-                                  text: "Lo mas visitado de la semana",
+                                  text: "Busquedas similares",
                                   style: TextStyle(
                                       fontSize: 15,
                                       color: const Color.fromRGBO(
@@ -134,11 +140,12 @@ class _DescripcionState extends State<Descripcion> {
                                           Container(
                                             width: 100,
                                             height: 80,
-                                            decoration: const BoxDecoration(
+                                            decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     fit: BoxFit.fill,
-                                                    image: NetworkImage(
-                                                        "https://i.fbcd.co/products/original/4e6b7caafb95de5c92cede5e80bce28fb2688b7e6e5a02861d162194de582ef1.jpg")),
+                                                    image: AssetImage(
+                                                        categorias_animales[
+                                                            index]['img'])),
                                                 color: Color.fromRGBO(
                                                     134, 81, 137, 1),
                                                 boxShadow: [
@@ -159,7 +166,8 @@ class _DescripcionState extends State<Descripcion> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  "Titulo",
+                                                  categorias_animales[index]
+                                                      ['title'],
                                                   textAlign: TextAlign.start,
                                                   style: TextStyle(
                                                     fontSize: 13,
@@ -169,7 +177,8 @@ class _DescripcionState extends State<Descripcion> {
                                                   ),
                                                 ),
                                                 Text(
-                                                  "Subtitulo",
+                                                  categorias_animales[index]
+                                                      ['description'],
                                                   textAlign: TextAlign.start,
                                                   style: TextStyle(
                                                     fontSize: 10,

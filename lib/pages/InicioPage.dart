@@ -185,7 +185,12 @@ class _InicioPageState extends State<InicioPage> {
                         padding: const EdgeInsets.only(
                             right: 15, top: 15, bottom: 10, left: 10),
                         child: GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Descripcion()));
+                          },
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -243,7 +248,7 @@ class _InicioPageState extends State<InicioPage> {
                 margin: EdgeInsets.only(top: 10),
                 alignment: Alignment.topLeft,
                 child: Text.rich(TextSpan(
-                    text: "Nuevos Albunes",
+                    text: "Top de cada Categoria",
                     style: TextStyle(
                         fontSize: 20,
                         color: const Color.fromRGBO(134, 81, 137, 0.8),
@@ -256,12 +261,17 @@ class _InicioPageState extends State<InicioPage> {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(
-                      children: List.generate(song_type_1.length, (index) {
+                      children: List.generate(top.length, (index) {
                         return Padding(
                           padding: const EdgeInsets.only(
                               right: 15, top: 15, bottom: 10, left: 10),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Descripcion()));
+                            },
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -271,9 +281,7 @@ class _InicioPageState extends State<InicioPage> {
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                           fit: BoxFit.fill,
-                                          image: AssetImage(
-                                              categorias_animales[index]
-                                                  ['img'])),
+                                          image: AssetImage(top[index]['img'])),
                                       color: Color.fromRGBO(134, 81, 137, 1),
                                       boxShadow: [
                                         BoxShadow(
@@ -335,7 +343,7 @@ class _InicioPageState extends State<InicioPage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "Titulo",
+                                        top[index]['title'],
                                         textAlign: TextAlign.start,
                                         style: TextStyle(
                                           fontSize: 13,
@@ -344,16 +352,6 @@ class _InicioPageState extends State<InicioPage> {
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      Text(
-                                        "Subtitulo",
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          color:
-                                              Color.fromRGBO(134, 81, 137, 0.8),
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      )
                                     ],
                                   ),
                                 )
