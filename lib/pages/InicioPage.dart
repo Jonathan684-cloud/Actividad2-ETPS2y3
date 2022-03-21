@@ -172,9 +172,7 @@ class _InicioPageState extends State<InicioPage> {
                         color: const Color.fromRGBO(134, 81, 137, 0.8),
                         fontWeight: FontWeight.w900))),
               ),
-              /* const SizedBox(
-                height: 20,
-              ), */
+              //comentario de prueba
 
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
